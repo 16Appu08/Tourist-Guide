@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>City Guide</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body style="background-image: url('bg1.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; min-height: 100vh; ">
+
+  <h1 id="cityTitle">Loading...</h1>
+  <div id="cityContent"></div>
+
+  <script src="city-data.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const cityKey = urlParams.get("city");
+
+    const cityName = cities[cityKey]?.name || "Unknown City";
+    document.getElementById("cityTitle").textContent = cityName;
+
+    const cityData = cities[cityKey];
+
+    const container = document.getElementById("cityContent");
+
+    if (cityData) {
+      ["restaurant", "hotel", "hangout"].forEach(section => {
+        const sectionDiv = document.createElement("div");
+        sectionDiv.classList.add("section");
+
+        const heading = document.createElement("h2");
+        heading.textContent = section.toUpperCase();
+        sectionDiv.appendChild(heading);
+
+        const imgRow = document.createElement("div");
+        imgRow.classList.add("img-row");
+
+        cityData[section].forEach(place => {
+          const card = document.createElement("div");
+          card.classList.add("img-card");
+
+          const img = document.createElement("img");
+          img.src = place.img;
+          img.alt = place.name;
+
+          const caption = document.createElement("p");
+          caption.textContent = place.name;
+
+          card.appendChild(img);
+          card.appendChild(caption);
+          imgRow.appendChild(card);
+        });
+
+        sectionDiv.appendChild(imgRow);
+        container.appendChild(sectionDiv);
+      });
+    } else {
+      container.innerHTML = "<p>No data available for this city.</p>";
+    }
+  </script>
+</body>
+</html>

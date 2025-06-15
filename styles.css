@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+ 
+}
+
+/* Navbar */
+nav {
+  background-color: #1a3c40;
+  padding: 15px;
+  color: white;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Image Section with Overlay Text */
+.image-container {
+  position: relative;
+  display: block;
+}
+
+.image-container img {
+  width: 100%;
+  height: 550px;
+  border-radius: 0;
+  opacity: 0.8;
+  object-fit: cover;
+  filter: brightness(65%);
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 64px;
+  font-weight: bold;
+  font-family: 'Brush Script MT', cursive;
+  text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.dropdown select {
+  padding: 12px 20px;
+  font-size: 17px;
+  border-radius: 6px;
+  border: 2px solid #1a3c40;
+  background-color: #ffffff;
+  color: #1a3c40;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.dropdown select:hover {
+  background-color: #1a3c40;
+  color: #ffffff;
+}
+
+/* City Title */
+h1 {
+  text-align: center;
+  color: #eff254;
+  margin-top: 30px;
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+
+/* Section Headings */
+.section {
+  margin: 50px auto;
+  padding: 30px;
+  max-width: 1100px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.section h2 {
+  color: #f25c54;
+  margin-bottom: 25px;
+  font-size: 28px;
+  border-bottom: 3px solid #f5a623;
+  padding-bottom: 10px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+/* Image Rows */
+.img-row {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Image Cards */
+.img-card {
+  text-align: center;
+  background-color: #fefefe;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.img-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  border-color: #f25c54;
+}
+
+.img-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.img-card p {
+  margin: 12px;
+  font-weight: bold;
+  color: #34495e;
+  font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .img-card {
+    width: 90%;
+  }
+
+  .img-card img {
+    height: auto;
+  }
+
+  .overlay-text {
+    font-size: 36px;
+    padding: 0 10px;
+  }
+
+  .section {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+}
